@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/',
+  base: '/manual/',
   title: 'Manual',
   themeConfig: {
     smoothScroll: true,
