@@ -55,7 +55,7 @@ wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tgz
 tar xzf Python-3.8.1.tgz
 cd Python-3.8.1/
 ./configure --enable-optimizations
-python2 --version
+python3 --version
 ```
 
 ## Git & Deploy
@@ -68,7 +68,7 @@ Creamos una rama a partir del master, por lo general comienza con dev, luego el 
 git checkout -b dev-Q4-plataforma-abogados
 ```
 
-Hago mis modificaciones sobre esa rama. Para verificar en qué rama estoy.
+Verificamos que estamos en la rama creada, la dev, aquí es donde hago mis modificaciones.
 
 ```bash
 git branch
@@ -79,19 +79,19 @@ Verifico si tengo archivos por commitear en mi árbol local.
 git status
 ```
 
-Agrego todos mis archivos modificados a mi espacio de trabajo local.
+Si los hay pues los levanto a mi espacio de trabajo local. El punto hace referencia a todos los modificados.
 ```bash
 git add .
 ```
 
-Hago el commit a mi repositorio local, les coloco un mensaje que en corto explique mucho
+Hago el commit a mi repositorio local, le coloco un mensaje conciso.
 ```bash
-git commit -m "Informes Avaya Opciones"
+git commit -m "Info contundente"
 ```
 
-Me voy a master o seguro en un futuro main, actualizo mi main local trayéndome todos los cambios que hayan arriba en el repositorio compartido, luego mezclo esos cambios a mi rama (Consejos de Froylan), de ahí me voy a master y le hago un merge de la mezcla que tengo en la rama. Hago el gran push al repositorio online.
+Me voy ahora a la rama master y comienzo la magia de los merge. Esto siguiendo la recete confiable de don Froylan.
+
 ```bash
-git status
 git checkout master 
 git pull
 git checkout dev-Q4-avaya 
@@ -100,15 +100,8 @@ git branch
 git checkout master 
 git merge dev-Q4-avaya 
 git push
-```
-Si eres inteligente y seguiste los pasos de la guía de Juan como se debe, es decir hiciste un login bla@dev.bbva.com en el fga-cli.py (Si tienes problemas para descargar no es 404, es bajarle la seguridad ssl a tu compu, /etc/ssl/ssl_config a nivel 1... google con eso).
-
-Te vas a la carpeta del proyecto y corres
-
-```bash
 fga-cli.py deploy app --env dev -- --promote
 ```
+Si eres inteligente y seguiste los pasos de la guía de Juan correctamente, es decir hiciste un login cuenta.contractor@dev.bbva.com en el fga-cli.py install, todo debe salir bien.
 
-### Deploy en producción
-
-¿Del 1 al 10 que tan seguro estás?
+*** Si tienes problemas para descargar el fga en linux, recuerda bajarle la seguridad ssl a tu compu, /etc/ssl/ssl_config a nivel 1... google con eso.
