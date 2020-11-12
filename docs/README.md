@@ -132,8 +132,8 @@ Don Froyd creó una apires flask, para que con el siguiente proxy, nos podamos c
 Recomendamos fuertemente que el comando  "db_proxy" lo agregues a tu lista de [alias](#crear-archivo-de-alias) en tu computadora(#Git)
 
 ```bash
-sudo systemctl stop mysql.service
-./restart.sh
+sudo systemctl stop mysql.service   #Sólo si el puerto 3306 está ocupado sin necesidad
+./restart.sh                        #Se corre la primera vez, para todas las instalaciones
 db_proxy
 . ../env/bin/activate
 python runner.py
